@@ -22,7 +22,7 @@ public class Room {
     private String roomNumber; // e.g., "A10", "B1"
     @Column(nullable = false,name = "facility_name")
     private String facilityName; // e.g., "fridge",  "ac" or "ceiling Fan"
-    @Column(nullable = false,name = "roomStatus")
+    @Column(nullable = false,name = "room_status")
     private RoomStatus roomStatus; // true if available, false if booked
     @Column(nullable = false,name = "number_of_beds")
     private int numberOfBeds; // number of beds in the room

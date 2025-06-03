@@ -1,0 +1,28 @@
+package com.example.campusnest.entity;
+
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Entity
+
+public class Booking {
+
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    @Column(updatable = false, nullable = false, name = "booking_id")
+    private Long id; // Unique identifier for the booking
+    @ManyToOne
+    @JoinColumn(nullable = false, name = "Student_id")
+    private User student; // The user who made the booking
+    @ManyToOne
+    @JoinColumn(nullable = false,name = "room_id")
+    private Room room;
+    @Column(nullable = false, name = "booking_date")
+    private String bookingDate; // Date of the booking in "YYYY-MM-DD" format
+    @Column(nullable = false,name = "status")
+    private String status; // e.g., "CONFIRMED", "CANCELLED", "PENDING"
+}

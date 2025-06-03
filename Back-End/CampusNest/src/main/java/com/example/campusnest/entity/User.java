@@ -1,0 +1,29 @@
+package com.example.campusnest.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Setter
+@Getter
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(updatable = false, nullable = false, name = "user_id")
+    private Long id;
+    @Column(nullable = false, name = "name")
+    private String name;
+    @Column(nullable = false, unique = true, name = "username")
+    private String username;
+    @Column(nullable = true, name = "password")
+    private String password;
+    @Column(nullable = false, unique = true, name = "email")
+    private String email;
+    @Column(nullable = true, name = "phone_number")
+    private String phoneNumber;
+
+    private String role; // e.g., "USER", "ADMIN"
+
+}

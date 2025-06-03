@@ -21,6 +21,8 @@ public class Booking {
     @ManyToOne
     @JoinColumn(nullable = false,name = "room_id")
     private Room room;
+    @Column (nullable = true, name = "preferred_roommate_name")
+    private String preferredRoommateName; // optional input by name or tag
     @Column(nullable = false, name = "booking_date")
     private String bookingDate; // Date of the booking in "YYYY-MM-DD" format
     @Column(nullable = false,name = "status")

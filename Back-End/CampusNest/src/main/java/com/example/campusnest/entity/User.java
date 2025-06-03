@@ -1,5 +1,6 @@
 package com.example.campusnest.entity;
 
+import com.example.campusnest.utils.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,6 @@ public class User {
     @Column(nullable = true, name = "phone_number")
     private String phoneNumber;
 
-    private String role; // e.g., "USER", "ADMIN"
+    private Role role; // e.g., "USER", "ADMIN"
 
 }

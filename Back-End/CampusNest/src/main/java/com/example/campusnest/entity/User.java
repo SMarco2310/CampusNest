@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false, name = "user_id")
     private Long id;
     @Column(nullable = false, name = "name")

@@ -4,6 +4,7 @@ import com.example.campusnest.utils.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.userdetails.UserDetails;
 
 
 @Setter
@@ -26,5 +27,6 @@ public class User {
     private String phoneNumber;
 
     private Role role; // e.g., "USER", "ADMIN"
+
 
 }

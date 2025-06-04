@@ -1,6 +1,7 @@
 package com.example.campusnest.entity;
 
 
+import com.example.campusnest.utils.BookingStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,5 +27,5 @@ public class Booking {
     @Column(nullable = false, name = "booking_date")
     private String bookingDate; // Date of the booking in "YYYY-MM-DD" format
     @Column(nullable = false,name = "status")
-    private String status; // e.g., "CONFIRMED", "CANCELLED", "PENDING"
+    private BookingStatus status; // e.g., "CONFIRMED", "CANCELLED", "PENDING"
 }

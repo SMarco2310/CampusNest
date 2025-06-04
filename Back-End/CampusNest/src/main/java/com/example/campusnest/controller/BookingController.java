@@ -5,6 +5,8 @@ import com.example.campusnest.service.BookingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
@@ -17,12 +19,12 @@ public class BookingController {
     }
 
     @PostMapping
-    public ResponseEntity<BookingResponse> bookRoom(@RequestBody Booking request) {
-        return ResponseEntity.ok(bookingService.bookRoom(request));
+    public ResponseEntity<Booking> bookRoom(@RequestBody Booking request) {
+        return ResponseEntity.ok(bookingService.save(request));
     }
 
     @GetMapping
-    public ResponseEntity<BookingResponse> getAllBookings() {
+    public ResponseEntity<List<Booking>> getAllBookings() {
         return ResponseEntity.ok(bookingService.getAllBookings());
     }
 }

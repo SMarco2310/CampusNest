@@ -32,6 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-### Firebase ###
+.env
 src/main/resources/firebase-service-account.json
 

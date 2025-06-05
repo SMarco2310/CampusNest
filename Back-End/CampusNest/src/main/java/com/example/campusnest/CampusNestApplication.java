@@ -11,8 +11,6 @@ public class CampusNestApplication {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        FileInputStream serviceAccount = new FileInputStream(System.getenv("firebase-service-account.json"));
-
         SpringApplication.run(CampusNestApplication.class, args);
     }
 

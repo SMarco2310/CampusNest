@@ -19,11 +19,34 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping
+    @GetMapping("/rooms")
     public ResponseEntity<List<Room>> getAllRooms() {
         return ResponseEntity.ok(roomService.getAllRooms());
     }
 
+    @GetMapping("/rooms/{startPrice}/{endPrice}")
+    public ResponseEntity<List<Room>> getRoomsByPriceRange(double startPrice, double endPrice) {
+        return ResponseEntity.ok(roomService.getAllRoomsByPricePerBeds(startPrice, endPrice));
+    }
 
+    @GetMapping("/rooms/{id}")
+    public ResponseEntity<Room> getRoomById(long id) {
+        Room room = roomService.getRoomById(id);
+        if (room != null) {
+            return ResponseEntity.ok(room);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/rooms/hostel/{hostelId}")
+    public ResponseEntity<List<Room>> getRoomsByHostelId(long hostelId) {
+        List<Room> rooms = roomService.findRoomsByHostelId(hostelId);
+        if (rooms != null && !rooms.isEmpty()) {
+            return ResponseEntity.ok(rooms);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Hostel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false, name = "hostel_id")
     private Long id; // Unique identifier for the hostel
     @Column(nullable = false, name = "Hostel_name")

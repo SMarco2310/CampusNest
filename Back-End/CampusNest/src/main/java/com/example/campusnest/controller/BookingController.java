@@ -18,14 +18,15 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
-    @PostMapping
+    @PostMapping("/book")
     public ResponseEntity<Booking> bookRoom(@RequestBody Booking request) {
         return ResponseEntity.ok(bookingService.save(request));
     }
 
-    @GetMapping
+    @GetMapping("/bookings")
     public ResponseEntity<List<Booking>> getAllBookings() {
         return ResponseEntity.ok(bookingService.getAllBookings());
     }
+
 }
 

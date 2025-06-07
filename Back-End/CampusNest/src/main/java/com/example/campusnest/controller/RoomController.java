@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@Controller("api/rooms")
+@Controller("/api/v1/rooms")
 public class RoomController {
 
     @Autowired

@@ -27,6 +27,6 @@ public class Review {
     private String comments; // detailed comments
     @Column(nullable = false, name = "ratings")
     private int rating; // Optional: a 1-5 star rating
-    @Column(nullable = false, name ="createdAt")
+    @Column(nullable = false, name ="created_At")
     private LocalDateTime createdAt;
 }

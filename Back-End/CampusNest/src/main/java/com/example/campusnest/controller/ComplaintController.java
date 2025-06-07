@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@Controller("api/v1/complaints")
+@Controller("/api/v1/complaints")
 public class ComplaintController {
 
 

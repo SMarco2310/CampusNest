@@ -23,4 +23,15 @@ public class HostelController {
     public ResponseEntity<List<Hostel>> getAll() {
         return ResponseEntity.ok(hostelRepository.findAll());
     }
+
+    @GetMapping("/hostels/{id}")
+    public ResponseEntity<Hostel> getHostelById(long id) {
+        return hostelRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
+
+
 }

@@ -16,4 +16,6 @@ public interface RoomRepository extends JpaRepository<Room, Long> {
 
 
     List<Room> findAllByPricePerBedBetween(double startPrice, double endPrice);
+
+    Room findByRoomNumberAndHostelId(String roomNumber, Hostel hostelId);
 }

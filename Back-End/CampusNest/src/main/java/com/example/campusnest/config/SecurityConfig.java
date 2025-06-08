@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/**","/rooms","/rooms/hostel/").permitAll()
                         .requestMatchers("/ADMIN/**").hasRole("ADMIN")
-                        .requestMatchers("/USER/**").hasRole("USER")
+                        .requestMatchers("").hasRole("USER")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(firebaseTokenFilter, UsernamePasswordAuthenticationFilter.class)

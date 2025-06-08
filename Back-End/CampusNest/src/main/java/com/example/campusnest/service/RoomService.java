@@ -47,8 +47,17 @@ public class RoomService {
         return roomRepository.findAllByNumberOfBeds(numberOfBeds);
     }
 
+    public Room createRoom(Room room) {
+        // Example method to create a new room
+        return roomRepository.save(room);
+    }
     public Room updateRoom(Room room) {
         // Example method to update a room
         return roomRepository.save(room);
+    }
+
+    public Room getRoomByRoomNumberAndHostel_Id(String roomNumber, Hostel hostelId) {
+        // Example method to retrieve a room by room number and hostel ID
+        return roomRepository.findByRoomNumberAndHostelId(roomNumber, hostelId);
     }
 }

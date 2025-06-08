@@ -1,11 +1,14 @@
 package com.example.campusnest.controller;
 
+import com.example.campusnest.dto.UpdateRoom;
 import com.example.campusnest.entity.Room;
 import com.example.campusnest.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -48,5 +51,32 @@ public class RoomController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @PostMapping("/room")
+    public ResponseEntity<Room> createRoom(@RequestBody Room room) {
+        Room createdRoom = roomService.createRoom(room);
+        if (createdRoom != null) {
+            return ResponseEntity.status(201).body(createdRoom);
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+
+    }
+
+    @PostMapping("/room/update")
+    public ResponseEntity<Room> updateRoom(@RequestBody UpdateRoom room) {
+        Room existingRoom = roomService.getRoomByRoomNumberAndHostel_Id(room.getRoomNumber(),room.getHostelId());
+        if (existingRoom != null) {
+            existingRoom.setRoomStatus(room.getRoomStatus());
+            existingRoom.setNumberOfBeds(room.getNumberOfBeds());
+            existingRoom.setPricePerBed(room.getPricePerBed());
+            existingRoom.setRoomPictures(room.getRoomPictures());
+            Room updatedRoom = roomService.updateRoom(existingRoom);
+            return ResponseEntity.ok(updatedRoom);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 }

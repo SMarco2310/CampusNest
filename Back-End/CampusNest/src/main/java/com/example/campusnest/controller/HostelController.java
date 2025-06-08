@@ -5,6 +5,7 @@ import com.example.campusnest.repository.HostelRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -31,6 +32,15 @@ public class HostelController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PostMapping("/hostel/update")
+    public ResponseEntity<Hostel> updateHostel(Hostel hostel) {
+        if (hostelRepository.existsById(hostel.getId())) {
+            Hostel updatedHostel = hostelRepository.save(hostel);
+            return ResponseEntity.ok(updatedHostel);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
 

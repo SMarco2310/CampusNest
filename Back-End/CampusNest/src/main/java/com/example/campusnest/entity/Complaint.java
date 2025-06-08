@@ -19,8 +19,8 @@ public class Complaint {
     @ManyToOne
     @JoinColumn(nullable = false, name = "hostel_id")
     private Hostel hostel;
-    @Column(nullable = false, name="message")
+    @Column(nullable = false, name = "message")
     private String message; // The complaint message
-    @Column(nullable = false,name= "submission_date")
+    @Column(nullable = false, name = "submission_date")
     private Timestamp submissionDate; // Date and time when the complaint was submitted
 }

@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.net.URL;
 import java.util.List;
 
 @Setter
@@ -18,15 +17,15 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false, name = "room_id")
     private Long id;
-    @Column(nullable = false,name = "room_number")
+    @Column(nullable = false, name = "room_number")
     private String roomNumber; // e.g., "A10", "B1"
-    @Column(nullable = false,name = "facility_name")
+    @Column(nullable = false, name = "facility_name")
     private String facilityName; // e.g., "fridge",  "ac" or "ceiling Fan"
-    @Column(nullable = false,name = "room_status")
+    @Column(nullable = false, name = "room_status")
     private RoomStatus roomStatus; // true if available, false if booked
-    @Column(nullable = false,name = "number_of_beds")
+    @Column(nullable = false, name = "number_of_beds")
     private int numberOfBeds; // number of beds in the room
-    @Column(nullable = false,name = "price_per_bed")
+    @Column(nullable = false, name = "price_per_bed")
     private double pricePerBed; // price per bed per night
     @ManyToOne
     @JoinColumn(nullable = false, name = "hostel_id")

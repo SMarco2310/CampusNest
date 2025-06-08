@@ -6,7 +6,6 @@ import com.example.campusnest.utils.RoomStatus;
 import lombok.Getter;
 import lombok.Setter;
 
-
 import java.util.List;
 
 @Setter

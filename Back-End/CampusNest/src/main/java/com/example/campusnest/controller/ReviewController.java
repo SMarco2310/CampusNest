@@ -33,6 +33,7 @@ public class ReviewController {
         List<Review> reviews = reviewRepository.findAll();
         return ResponseEntity.ok(reviews); // Placeholder response
     }
+
     @GetMapping("/reviews/{hostelId}")
     public ResponseEntity<List<Review>> getReviewsByHostelId(Long hostelId) {
         // Logic to retrieve reviews by hostel ID will be implemented here

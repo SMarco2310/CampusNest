@@ -3,8 +3,6 @@ package com.example.campusnest.controller;
 
 import com.example.campusnest.entity.Complaint;
 import com.example.campusnest.service.ComplaintService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

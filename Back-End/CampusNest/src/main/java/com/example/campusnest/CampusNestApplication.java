@@ -3,7 +3,6 @@ package com.example.campusnest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 @SpringBootApplication

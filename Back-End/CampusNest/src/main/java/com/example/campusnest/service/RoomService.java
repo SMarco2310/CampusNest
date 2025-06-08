@@ -4,7 +4,6 @@ import com.example.campusnest.entity.Hostel;
 import com.example.campusnest.entity.Room;
 import com.example.campusnest.repository.HostelRepository;
 import com.example.campusnest.repository.RoomRepository;
-import com.example.campusnest.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +19,13 @@ public class RoomService {
         this.roomRepository = roomRepository;
         this.hostelRepository = hostelRepository;
     }
+
     // Additional methods for room management can be added here
     public List<Room> getAllRooms() {
         // Example method to retrieve all rooms
         return roomRepository.findAll();
     }
+
     public List<Room> getAllRoomsByPricePerBeds(double startPrice, double endPrice) {
         // Example method to retrieve all rooms within a price range
         return roomRepository.findAllByPricePerBedBetween(startPrice, endPrice);
@@ -51,6 +52,7 @@ public class RoomService {
         // Example method to create a new room
         return roomRepository.save(room);
     }
+
     public Room updateRoom(Room room) {
         // Example method to update a room
         return roomRepository.save(room);

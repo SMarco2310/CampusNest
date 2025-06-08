@@ -16,7 +16,7 @@ import java.util.List;
 public class RoomController {
 
     @Autowired
-    public  RoomService roomService;
+    public RoomService roomService;
 
     public RoomController(RoomService roomService) {
         this.roomService = roomService;
@@ -65,7 +65,7 @@ public class RoomController {
 
     @PostMapping("/room/update")
     public ResponseEntity<Room> updateRoom(@RequestBody UpdateRoom room) {
-        Room existingRoom = roomService.getRoomByRoomNumberAndHostel_Id(room.getRoomNumber(),room.getHostelId());
+        Room existingRoom = roomService.getRoomByRoomNumberAndHostel_Id(room.getRoomNumber(), room.getHostelId());
         if (existingRoom != null) {
             existingRoom.setRoomStatus(room.getRoomStatus());
             existingRoom.setNumberOfBeds(room.getNumberOfBeds());

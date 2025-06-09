@@ -19,8 +19,7 @@ public class HostelController {
     }
 
 
-    @GetMapping
-
+    @GetMapping("/hostels")
     public ResponseEntity<List<Hostel>> getAll() {
         return ResponseEntity.ok(hostelRepository.findAll());
     }

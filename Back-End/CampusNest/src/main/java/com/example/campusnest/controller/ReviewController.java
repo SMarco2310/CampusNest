@@ -27,14 +27,14 @@ public class ReviewController {
         return ResponseEntity.ok("Review created successfully"); // Placeholder response
     }
 
-    @GetMapping
+    @GetMapping("/reviews")
     public ResponseEntity<List<Review>> getAllReviews() {
         // Logic to retrieve all reviews will be implemented here
         List<Review> reviews = reviewRepository.findAll();
         return ResponseEntity.ok(reviews); // Placeholder response
     }
 
-    @GetMapping("/reviews/{hostelId}")
+    @GetMapping("/{hostelId}")
     public ResponseEntity<List<Review>> getReviewsByHostelId(Long hostelId) {
         // Logic to retrieve reviews by hostel ID will be implemented here
         List<Review> reviews = reviewRepository.findByHostel_Id(hostelId); // Placeholder logic

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@Controller("/api/v1/complaints")
+@Controller("/complaints")
 public class ComplaintController {
 
 
@@ -35,7 +35,7 @@ public class ComplaintController {
         return ResponseEntity.ok(complaints); // Placeholder response
     }
 
-    @GetMapping("/complaint/{hostelId}")
+    @GetMapping("/{hostelId}")
     public ResponseEntity<List<Complaint>> getComplaintsByHostelId(Long hostelId) {
         // Logic to retrieve complaints by hostel ID will be implemented here
         List<Complaint> complaints = complaintService.getAllComplaintByHostel(hostelId); // Placeholder logic

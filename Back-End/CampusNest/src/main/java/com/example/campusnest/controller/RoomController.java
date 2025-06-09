@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@Controller("/api/v1/rooms")
+@Controller("/rooms")
 public class RoomController {
 
     @Autowired

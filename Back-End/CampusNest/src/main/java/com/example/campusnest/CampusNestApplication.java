@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 public class CampusNestApplication {
 
     public static void main(String[] args) throws FileNotFoundException {
-
         SpringApplication.run(CampusNestApplication.class, args);
     }
 

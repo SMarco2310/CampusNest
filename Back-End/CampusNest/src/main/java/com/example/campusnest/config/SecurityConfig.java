@@ -32,12 +32,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public endpoints (no authentication required)
                         .requestMatchers(
-                                "/auth/**",  // All auth endpoints
-                                "/api/v1/hostels/hostels",  // GET all hostels
-                                "/api/v1/reviews/reviews",  // GET all reviews
-                                "/rooms/rooms",  // GET all rooms
-                                "/rooms/rooms/**",  // GET rooms by price range or ID
-                                "/rooms/hostel/**"  // GET rooms by hostel ID
+                                "/auth/**"  // All auth endpoints
                         ).permitAll()
                         // Manager role required endpoints
                         .requestMatchers(

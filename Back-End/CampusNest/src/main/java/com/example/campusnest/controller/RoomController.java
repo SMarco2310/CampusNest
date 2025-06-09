@@ -65,7 +65,7 @@ public class RoomController {
 
     @PostMapping("/room/update")
     public ResponseEntity<Room> updateRoom(@RequestBody UpdateRoom room) {
-        Room existingRoom = roomService.getRoomByRoomNumberAndHostel_Id(room.getRoomNumber(), room.getHostelId());
+        Room existingRoom = roomService.getRoomByRoomNumberAndHostel_Id(room.getRoomNumber(), room.getHostelId().getId());
         if (existingRoom != null) {
             existingRoom.setRoomStatus(room.getRoomStatus());
             existingRoom.setNumberOfBeds(room.getNumberOfBeds());

@@ -8,14 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-
 public interface RoomRepository extends JpaRepository<Room, Long> {
-    List<Room> findAllByHostelId(Hostel hostel_Id);
+    List<Room> findAllByHostel_Id(Long hostelId);
 
     List<Room> findAllByNumberOfBeds(int numberOfBeds);
 
-
     List<Room> findAllByPricePerBedBetween(double startPrice, double endPrice);
 
-    Room findByRoomNumberAndHostelId(String roomNumber, Hostel hostelId);
+    Room findByRoomNumberAndHostel_Id(String roomNumber, Long hostelId);
 }

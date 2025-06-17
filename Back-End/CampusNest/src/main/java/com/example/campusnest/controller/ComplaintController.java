@@ -23,7 +23,7 @@ public class ComplaintController {
         return ResponseEntity.ok("Complaint created successfully");
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Complaint>> getAllComplaints() {
         List<Complaint> complaints = complaintService.getAllComplaints();
         return ResponseEntity.ok(complaints);

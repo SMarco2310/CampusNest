@@ -13,7 +13,7 @@ import lombok.Setter;
 public class Booking {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false, name = "booking_id")
     private Long id; // Unique identifier for the booking
     @ManyToOne
@@ -28,4 +28,8 @@ public class Booking {
     private String bookingDate; // Date of the booking in "YYYY-MM-DD" format
     @Column(nullable = false, name = "status")
     private BookingStatus status; // e.g., "CONFIRMED", "CANCELLED", "PENDING"
+
+    public Booking() {
+        // Default constructor
+    }
 }

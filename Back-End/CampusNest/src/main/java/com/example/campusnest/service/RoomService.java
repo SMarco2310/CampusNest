@@ -1,7 +1,8 @@
 package com.example.campusnest.service;// ... other imports ...
+
+
 import com.example.campusnest.entity.Room;
 import com.example.campusnest.repository.RoomRepository;
-import com.example.campusnest.repository.HostelRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,11 +10,10 @@ import java.util.List;
 @Service
 public class RoomService {
     private final RoomRepository roomRepository;
-    private final HostelRepository hostelRepository;
 
-    public RoomService(RoomRepository roomRepository, HostelRepository hostelRepository) {
+
+    public RoomService(RoomRepository roomRepository) {
         this.roomRepository = roomRepository;
-        this.hostelRepository = hostelRepository;
     }
 
     public List<Room> getAllRooms() {
@@ -29,7 +29,7 @@ public class RoomService {
     }
 
     public List<Room> findRoomsByHostelId(long hostelId) {
-        return roomRepository.findAllByHostel_Id(hostelId);
+        return roomRepository.findAllByHostelId(hostelId);
     }
 
     public List<Room> findRoomsByNumberOfBeds(int numberOfBeds) {
@@ -37,7 +37,15 @@ public class RoomService {
     }
 
     public Room createRoom(Room room) {
-        return roomRepository.save(room);
+        Room newRoom = new Room();
+        newRoom.setRoomNumber(room.getRoomNumber());
+        newRoom.setFacilityName(room.getFacilityName());
+        newRoom.setNumberOfBeds(room.getNumberOfBeds());
+        newRoom.setPricePerBed(room.getPricePerBed());
+        newRoom.setHostel(room.getHostelId());
+        newRoom.setRoomPictures(room.getRoomPictures());
+        newRoom.setRoomStatus(room.getRoomStatus());
+        return roomRepository.save(newRoom);
     }
 
     public Room updateRoom(Room room) {
@@ -45,6 +53,6 @@ public class RoomService {
     }
 
     public Room getRoomByRoomNumberAndHostel_Id(String roomNumber, Long hostelId) {
-        return roomRepository.findByRoomNumberAndHostel_Id(roomNumber, hostelId);
+        return roomRepository.findByRoomNumberAndHostelId(roomNumber, hostelId);
     }
 }

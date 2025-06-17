@@ -29,4 +29,8 @@ public class Review {
     private int rating; // Optional: a 1-5 star rating
     @Column(nullable = false, name = "created_At")
     private LocalDateTime createdAt;
+
+    public Review() {
+        // Default constructor
+    }
 }

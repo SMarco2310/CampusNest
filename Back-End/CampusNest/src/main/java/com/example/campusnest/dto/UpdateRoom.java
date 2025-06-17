@@ -1,7 +1,6 @@
 package com.example.campusnest.dto;
 
 
-import com.example.campusnest.entity.Hostel;
 import com.example.campusnest.utils.RoomStatus;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +20,6 @@ public class UpdateRoom {
     private RoomStatus roomStatus; // true if available, false if booked
     private int numberOfBeds; // number of beds in the room
     private double pricePerBed; // price per bed per night
-    private Hostel hostelId; // ID of the hostel this room belongs to
+    private Long hostelId; // ID of the hostel this room belongs to
     private List<String> roomPictures; //
 }

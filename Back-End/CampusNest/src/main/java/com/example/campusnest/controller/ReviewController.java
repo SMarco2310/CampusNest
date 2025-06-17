@@ -23,7 +23,7 @@ public class ReviewController {
         return ResponseEntity.ok("Review created successfully");
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Review>> getAllReviews() {
         List<Review> reviews = reviewRepository.findAll();
         return ResponseEntity.ok(reviews);

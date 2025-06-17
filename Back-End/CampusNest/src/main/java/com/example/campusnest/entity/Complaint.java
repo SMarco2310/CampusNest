@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public class Complaint {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "complaint_id")
     private Long id; // Unique identifier for the complaint
     @ManyToOne
@@ -23,4 +23,8 @@ public class Complaint {
     private String message; // The complaint message
     @Column(nullable = false, name = "submission_date")
     private Timestamp submissionDate; // Date and time when the complaint was submitted
+
+    public Complaint() {
+
+    }
 }

@@ -1,45 +1,34 @@
 package com.example.campusnest.controller;
 
 import com.example.campusnest.entity.Hostel;
-import com.example.campusnest.repository.HostelRepository;
+import com.example.campusnest.service.HostelService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller("/api/v1/hostels")
+@RestController // Use @RestController for REST APIs
+@RequestMapping("/api/v1/hostels") // Base path for all endpoints in this controller
 public class HostelController {
 
-    private final HostelRepository hostelRepository;
+    private final HostelService hostelService;
 
-    public HostelController(HostelRepository hostelRepository) {
-        this.hostelRepository = hostelRepository;
+    // Inject only what is needed
+    public HostelController(HostelService hostelService) {
+        this.hostelService = hostelService;
     }
 
-
-    @GetMapping("/hostels")
-    public ResponseEntity<List<Hostel>> getAll() {
-        return ResponseEntity.ok(hostelRepository.findAll());
+    @GetMapping("/all")
+    public ResponseEntity<List<Hostel>> getAllHostels() { // Renamed for clarity
+        return ResponseEntity.ok(hostelService.getHostels());
     }
+    
 
-    @GetMapping("/hostels/{id}")
-    public ResponseEntity<Hostel> getHostelById(long id) {
-        return hostelRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    @PostMapping("/create") // Use @PostMapping for creating resources
+    public ResponseEntity<Hostel> createHostel(@RequestBody Hostel hostel) {
+        // Return 201 Created status for successful resource creation
+        Hostel createdHostel = hostelService.createHostel(hostel);
+        return new ResponseEntity<>(createdHostel, HttpStatus.CREATED);
     }
-
-    @PostMapping("/hostel/update")
-    public ResponseEntity<Hostel> updateHostel(Hostel hostel) {
-        if (hostelRepository.existsById(hostel.getId())) {
-            Hostel updatedHostel = hostelRepository.save(hostel);
-            return ResponseEntity.ok(updatedHostel);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-
 }

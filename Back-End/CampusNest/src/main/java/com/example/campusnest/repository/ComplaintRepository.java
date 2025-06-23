@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 
 public interface ComplaintRepository extends JpaRepository<Complaint, Long> {
-    List<Complaint> findAllByHostel_Id(Long hostelId);
+    List<Complaint> findAllByHostelId(Long hostelId);
 }

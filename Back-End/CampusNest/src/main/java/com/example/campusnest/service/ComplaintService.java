@@ -29,6 +29,6 @@ public class ComplaintService {
 
     public List<Complaint> getAllComplaintByHostel(Long hostelId) {
         // This method retrieves all complaints associated with a specific hostel
-        return complaintRepository.findAllByHostel_Id(hostelId);
+        return complaintRepository.findAllByHostelId(hostelId);
     }
 }

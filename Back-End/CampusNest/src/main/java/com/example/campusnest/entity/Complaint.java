@@ -16,9 +16,8 @@ public class Complaint {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "complaint_id")
     private Long id; // Unique identifier for the complaint
-    @ManyToOne
     @JoinColumn(nullable = false, name = "hostel_id")
-    private Hostel hostel;
+    private Long hostelId;
     @Column(nullable = false, name = "message")
     private String message; // The complaint message
     @Column(nullable = false, name = "submission_date")

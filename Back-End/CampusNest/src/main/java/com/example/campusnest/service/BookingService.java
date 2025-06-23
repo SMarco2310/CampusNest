@@ -20,9 +20,14 @@ public class BookingService {
     // Additional methods for booking management can be added here
     public Booking save(Booking booking) {
         // Example method to save a booking
-        return bookingRepository.save(booking);
+        Booking newBooking= new Booking();
+        newBooking.setStudent(booking.getStudent());
+        newBooking.setRoom(booking.getRoom());
+        newBooking.setBookingDate(booking.getBookingDate());
+        newBooking.setPreferredRoommateName(booking.getPreferredRoommateName());
+        newBooking.setStatus(booking.getStatus());
+        return bookingRepository.save(newBooking);
     }
-
     // Example method to retrieve all bookings by User
     public List<Booking> getBookingByUser(User user) {
         return bookingRepository.findAllByStudent(user);

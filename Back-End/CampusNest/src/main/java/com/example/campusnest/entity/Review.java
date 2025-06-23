@@ -16,13 +16,11 @@ public class Review {
     @Column(nullable = false, name = "Review_id")
     private Long id;
 
-    @ManyToOne
     @JoinColumn(nullable = false, name = "student_id")
-    private User user; // who wrote the review
+    private Long userId; // who wrote the review
 
-    @ManyToOne
     @JoinColumn(nullable = false, name = "hostel_id")
-    private Hostel hostel; // the hostel being reviewed
+    private Long hostel; // the hostel being reviewed
     @Column(nullable = true, name = "comments")
     private String comments; // detailed comments
     @Column(nullable = false, name = "ratings")

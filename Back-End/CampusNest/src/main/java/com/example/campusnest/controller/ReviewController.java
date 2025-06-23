@@ -2,6 +2,7 @@ package com.example.campusnest.controller;
 
 import com.example.campusnest.entity.Review;
 import com.example.campusnest.repository.ReviewRepository;
+import com.example.campusnest.service.ReviewService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,27 +12,27 @@ import java.util.List;
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
 
-    private final ReviewRepository reviewRepository;
+    private final ReviewService reviewService;
 
-    public ReviewController(ReviewRepository reviewRepository) {
-        this.reviewRepository = reviewRepository;
+    public ReviewController(ReviewService reviewService) {
+        this.reviewService = reviewService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<String> createReview(@RequestBody Review review) {
-        reviewRepository.save(review);
+        reviewService.createReview(review);
         return ResponseEntity.ok("Review created successfully");
     }
 
     @GetMapping("/all")
     public ResponseEntity<List<Review>> getAllReviews() {
-        List<Review> reviews = reviewRepository.findAll();
+        List<Review> reviews = reviewService.getAllReviews();
         return ResponseEntity.ok(reviews);
     }
 
     @GetMapping("/{hostelId}")
     public ResponseEntity<List<Review>> getReviewsByHostelId(@PathVariable Long hostelId) {
-        List<Review> reviews = reviewRepository.findByHostel_Id(hostelId);
+        List<Review> reviews = reviewService.getReviewsByHostelId(hostelId);
         return ResponseEntity.ok(reviews);
     }
 }

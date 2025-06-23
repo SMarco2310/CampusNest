@@ -38,43 +38,51 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
 
                 .authorizeHttpRequests(auth -> auth
-                                // Public endpoints (no auth required)
+//                                // Public endpoints (no auth required)
+//                                .requestMatchers(
+//                                        "/api/v1/auth/signup",
+//                                        "/api/v1/auth/login",
+//                                        "/api/v1/hostels/all",
+//                                        "/api/v1/rooms/all",
+//                                        "/api/v1/rooms/by-price",
+//                                        "/api/v1/rooms/{id}",
+//                                        "/api/v1/rooms/{hostelId}"
+//                                ).permitAll()
+//
+//                                // ADMIN only endpoints
+//                                .requestMatchers(
+//                                        "/api/v1/auth/all",
+//                                        "/api/v1/complaints/all"
+//                                ).hasRole("ADMIN")
+//
+//                                // MANAGER (Hostel Owner) endpoints
+//                                .requestMatchers(
+//                                        "/api/v1/hostels/create",
+//                                        "/api/v1/rooms/create",
+//                                        "/api/v1/rooms/{id}" // PUT update
+//                                ).hasRole("MANAGER")
+//
+//                                // STUDENT-only endpoints
+//                                .requestMatchers(
+//                                        "/api/v1/bookings/book",       // Book a room
+//                                        "/api/v1/complaints/create",          // Submit a complaint
+//                                        "/api/v1/reviews/create"// Create/view reviews
+//                                ).hasRole("STUDENT")
+//
+//                                // Shared endpoints (any authenticated user)
+//                                .requestMatchers(
+//                                        "/api/v1/auth/profile",
+//                                        "/complaints/{hostelId}"       // View complaints for a hostel
+//                                ).authenticated()
                                 .requestMatchers(
+                                        "/api/v1/bookings/book",
                                         "/api/v1/auth/signup",
-                                        "/api/v1/auth/login",
-                                        "/api/v1/hostels/all",
-                                        "/api/v1/rooms/all",
-                                        "/api/v1/rooms/by-price",
-                                        "/api/v1/rooms/{id}",
-                                        "/api/v1/rooms/{hostelId}"
-                                ).permitAll()
-
-                                // ADMIN only endpoints
-                                .requestMatchers(
-                                        "/api/v1/auth/all",
-                                        "/api/v1/complaints/all"
-                                ).hasRole("ADMIN")
-
-                                // MANAGER (Hostel Owner) endpoints
-                                .requestMatchers(
+                                        "api/v1/auth/all",
                                         "/api/v1/hostels/create",
                                         "/api/v1/rooms/create",
-                                        "/api/v1/rooms/{id}" // PUT update
-                                ).hasRole("MANAGER")
-
-                                // STUDENT-only endpoints
-                                .requestMatchers(
-                                        "/api/v1/bookings/book",       // Book a room
-                                        "/complaints/create",          // Submit a complaint
-                                        "/api/v1/reviews/**"           // Create/view reviews
-                                ).hasRole("STUDENT")
-
-                                // Shared endpoints (any authenticated user)
-                                .requestMatchers(
-                                        "/api/v1/auth/profile",
-                                        "/complaints/{hostelId}"       // View complaints for a hostel
-                                ).authenticated()
-
+                                        "/api/v1/reviews/create",
+                                        "/api/v1/complaints/create"
+                                ).permitAll()
                                 .anyRequest().denyAll()
                 )
                 .userDetailsService(userService)

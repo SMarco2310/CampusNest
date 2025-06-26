@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="78286b1e-201b-4fe0-9926-eb855977741f" name="Changes" comment="Refactor Booking, Complaint, and Review entities; update relationships to use IDs, enhance service methods, and improve security configuration" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main2" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SMarco2310&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SMarco2310/CampusNest.git&quot;,
+    &quot;accountId&quot;: &quot;d6e82f4f-c1b0-4473-b71b-00eec6db0f64&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2y2huMhkjaRwpbj3Vd2S2irnFUp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #10.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "HTTP Request.generated-requests | #8.executor": "Run",
+    "HTTP Request.generated-requests | #9.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.CampusNestApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/sossou/Projects/Summer_Projects/CampusNest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/CampusNest/src/main/java/com/example/campusnest" />
+      <recent name="$PROJECT_DIR$/CampusNest/src/main/java/com/example/campusnest/config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.campusnest.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.CampusNestApplication">
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#4" index="4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#5" index="5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#6" index="6" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#7" index="7" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" executionIdentifier="#8" index="8" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="CampusNestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="CampusNest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.campusnest.CampusNestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #6" />
+        <item itemvalue="HTTP Request.generated-requests | #8" />
+        <item itemvalue="HTTP Request.generated-requests | #7" />
+        <item itemvalue="HTTP Request.generated-requests | #4" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78286b1e-201b-4fe0-9926-eb855977741f" name="Changes" comment="" />
+      <created>1749038796979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749038796979</updated>
+      <workItem from="1749038803830" duration="9312000" />
+      <workItem from="1749079020830" duration="54000" />
+      <workItem from="1750162053537" duration="8671000" />
+      <workItem from="1750236588177" duration="15400000" />
+      <workItem from="1750671562723" duration="6523000" />
+      <workItem from="1750708205781" duration="1308000" />
+      <workItem from="1750765322140" duration="11862000" />
+      <workItem from="1750924336203" duration="130000" />
+      <workItem from="1750924540108" duration="123000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add RoomController to handle room-related API requests">
+      <option name="closed" value="true" />
+      <created>1749042789125</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749042789125</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add BookingController and Firebase integration; implement booking management and authentication">
+      <option name="closed" value="true" />
+      <created>1749077364690</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749077364690</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add BookingController and Firebase integration; implement booking management and authentication">
+      <option name="closed" value="true" />
+      <created>1749077494918</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749077494918</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add BookingController and Firebase integration; implement booking management and authentication">
+      <option name="closed" value="true" />
+      <created>1749077561925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1749077561925</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Refactor Booking entity to use BookingStatus enum; update RoomController to return ResponseEntity and improve security configuration">
+      <option name="closed" value="true" />
+      <created>1749077936715</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749077936715</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Refactor Booking entity to use BookingStatus enum; update RoomController to return ResponseEntity and improve security configuration">
+      <option name="closed" value="true" />
+      <created>1749077958228</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1749077958228</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor Booking entity to use BookingStatus enum; update RoomController to return ResponseEntity and improve security configuration">
+      <option name="closed" value="true" />
+      <created>1749078393245</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1749078393245</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update Firebase service account configuration">
+      <option name="closed" value="true" />
+      <created>1749078878549</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1749078878549</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactor authentication and user management; update API endpoints, enhance security, and improve user service logic">
+      <option name="closed" value="true" />
+      <created>1750167499035</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750167499035</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactor security configuration; enhance endpoint permissions and roles for clarity and access control">
+      <option name="closed" value="true" />
+      <created>1750185811421</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750185811421</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Refactor Booking, Complaint, and Review entities; update relationships to use IDs, enhance service methods, and improve security configuration">
+      <option name="closed" value="true" />
+      <created>1750706036410</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1750706036410</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add RoomController to handle room-related API requests" />
+    <MESSAGE value="Add BookingController and Firebase integration; implement booking management and authentication" />
+    <MESSAGE value="Refactor Booking entity to use BookingStatus enum; update RoomController to return ResponseEntity and improve security configuration" />
+    <MESSAGE value="Update Firebase service account configuration" />
+    <MESSAGE value="Refactor authentication and user management; update API endpoints, enhance security, and improve user service logic" />
+    <MESSAGE value="Refactor security configuration; enhance endpoint permissions and roles for clarity and access control" />
+    <MESSAGE value="Refactor Booking, Complaint, and Review entities; update relationships to use IDs, enhance service methods, and improve security configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Booking, Complaint, and Review entities; update relationships to use IDs, enhance service methods, and improve security configuration" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/CampusNest/src/main/java/com/example/campusnest/entity/User.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

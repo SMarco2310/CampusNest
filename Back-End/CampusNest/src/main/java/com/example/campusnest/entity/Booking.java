@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Setter
 @Getter
 @Entity
@@ -17,10 +19,10 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, name = "booking_id")
     private Long id; // Unique identifier for the booking
-    @JoinColumn(nullable = false, name = "Student_id")
+    @Column(nullable = false, name = "Student_id")
     @JsonProperty("student_id")
     private Long student; // The user who made the booking
-    @JoinColumn(nullable = false, name = "room_id")
+    @Column(nullable = false, name = "room_id")
     @JsonProperty("room_id")
     private Long room;
     @Column(name = "preferred_roommate_name",nullable = false)
@@ -28,7 +30,7 @@ public class Booking {
     private String preferredRoommateName; // optional input by name or tag
     @Column(nullable = false, name = "booking_date")
     @JsonProperty("booking_date")
-    private String bookingDate; // Date of the booking in "YYYY-MM-DD" format
+    private LocalDateTime bookingDate; // Date of the booking in "YYYY-MM-DD" format
     @Column(nullable = false, name = "status")
     @JsonProperty("status")
     private BookingStatus status; // e.g., "CONFIRMED", "CANCELLED", "PENDING"

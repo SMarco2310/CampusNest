@@ -25,7 +25,7 @@ public class Room {
     private int numberOfBeds; // number of beds in the room
     @Column(nullable = false, name = "price_per_bed")
     private double pricePerBed; // price per bed per night
-    @JoinColumn(nullable = false, name = "hostel_id")
+    @Column(nullable = false, name = "hostel_id")
     private long hostelId; // ID of the hostel this room belongs to
     @Column(name = "room_pictures", nullable = false)
     private String roomPictures; // URL or path to the room pictures

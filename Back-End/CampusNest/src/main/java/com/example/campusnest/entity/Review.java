@@ -16,10 +16,10 @@ public class Review {
     @Column(nullable = false, name = "Review_id")
     private Long id;
 
-    @JoinColumn(nullable = false, name = "student_id")
+    @Column(nullable = false, name = "student_id")
     private Long userId; // who wrote the review
 
-    @JoinColumn(nullable = false, name = "hostel_id")
+    @Column(nullable = false, name = "hostel_id")
     private Long hostel; // the hostel being reviewed
     @Column(nullable = true, name = "comments")
     private String comments; // detailed comments

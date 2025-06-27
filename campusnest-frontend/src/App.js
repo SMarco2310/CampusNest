@@ -13,20 +13,20 @@ import NavBar from './components/navBar';
 
 function App() {
   return (
-      // <BrowserRouter>
-      //   <Routes>
-      //     <Route path="/login" element={<Login />} />
-      //     <Route path="/register" element={<Register />} />
-      //     <Route path="/dashboard" element={<Dashboard />} />
-      //     <Route path="/hostels" element={<Hostels />} />
-      //     <Route path="/hostels/:id" element={<HostelDetails />} />
-      //     <Route path="/rooms" element={<Rooms />} />
-      //     <Route path="/rooms/:id" element={<RoomDetails />} />
-      //     <Route path="/" element={<Home />} />
-      //   </Routes>
-      // </BrowserRouter>
-
-      <NavBar/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/hostels" element={<Hostels />} />
+          <Route path="/rooms/:hostelId" element={<Hostels />} />
+          <Route path="/hostels/:id" element={<HostelDetails />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/rooms/:id" element={<RoomDetails />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      // <Home/>
 
   );
 }
